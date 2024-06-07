@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(/tools/backgroundimages/bienvenida3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*AJSUTES DE TAMAÑO DE PANTALLA*/
+
+/* Para pantallas de 600px o menos */
+@media (max-width: 600px) {
+    #main {
+      width: 100%; /* El contenido ocupa todo el ancho */
+    }
+    #sidebar {
+      display: none; /* Ocultar la barra lateral en pantallas pequeñas */
+    }
+  }
+  
+  /* Para pantallas de 600px a 900px */
+  @media (min-width: 600px) and (max-width: 900px) {
+    #main {
+      width: 70%; /* El contenido ocupa el 70% del ancho */
+    }
+    #sidebar {
+      display: block; /* Mostrar la barra lateral en pantallas medianas */
+    }
+  }
+  
+  /* Para pantallas de 900px o más */
+  @media (min-width: 900px) {
+    #main {
+      width: 60%; /* El contenido ocupa el 60% del ancho */
+    }
+    #sidebar {
+      width: 30%; /* La barra lateral ocupa el 30% del ancho */
+    }
+  }
+
+/*TEXTO BIENVENIDA*/
+.text-bienvenida{
+    color: #fff;
+    text-align: center;
+    font-size:10vh;
+    margin-top: 20vh;
+    letter-spacing: 0.5vh;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+/*NOMBRE JUEGO*/
+h1 {
+    text-align: center;
+    font-size: 22vh;
+    font-family: "Cherry Bomb One", system-ui;
+    color: rgb(255, 255, 255);
+    text-shadow: 10px 10px 10px #5991EF;
+    display: flex;
+    margin-top: 0%;
+    justify-content: center;
+}
+
+/*AJUSTES DE LETRA*/
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: wave 0.5s forwards;
+}
+
+/*ANIMACION*/
+
+@keyframes wave {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes reset {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.letter-reset {
+    animation: reset 0s forwards 4s;
+}
+
+/*BOTON*/
+
+.btn-com{
+
+    /*AJUSTES BOTON*/
+    cursor: pointer;
+    background: linear-gradient(to bottom, #ACCFF2 0%, #B294F1 100%);
+    border: white;
+    border-radius: 5vh;
+    transition: background-color 0.3s ease;
+    width: 30vh;
+    height: 10vh;
+
+    /*AJUSTES TEXTO BOTON*/
+    font-size: 8vh;  
+}
+
+/*AJUSTES DIV BOTON*/
+
+.boton-bienvenida{
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+}
+
+/* Efecto hover */
+.btn-com:hover {
+    background: linear-gradient(to bottom, #B294F1 0%, #ACCFF2 100%);
+}
+
+/*AJUSTES TEXTO BOTON*/
+
+.btn-com a{
+    color: white;
+    text-decoration: none;
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

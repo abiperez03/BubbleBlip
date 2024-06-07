@@ -1,0 +1,161 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+body {
+    display: flexbox;
+    justify-content: center;
+    min-height: 96vh;
+    background-image: url(/tools/backgroundimages/menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+/*AJSUTES DE TAMAÑO DE PANTALLA*/
+
+/* Para pantallas de 600px o menos */
+@media (max-width: 600px) {
+    #main {
+      width: 100%; /* El contenido ocupa todo el ancho */
+    }
+    #sidebar {
+      display: none; /* Ocultar la barra lateral en pantallas pequeñas */
+    }
+  }
+  
+  /* Para pantallas de 600px a 900px */
+  @media (min-width: 600px) and (max-width: 900px) {
+    #main {
+      width: 70%; /* El contenido ocupa el 70% del ancho */
+    }
+    #sidebar {
+      display: block; /* Mostrar la barra lateral en pantallas medianas */
+    }
+  }
+  
+  /* Para pantallas de 900px o más */
+  @media (min-width: 900px) {
+    #main {
+      width: 60%; /* El contenido ocupa el 60% del ancho */
+    }
+    #sidebar {
+      width: 30%; /* La barra lateral ocupa el 30% del ancho */
+    }
+  }
+
+
+
+/*NOMBRE JUEGO*/
+h1 {
+    display: flex;
+    position: relative;
+    margin-left: 30vh;
+    margin-right: 45vh;
+
+    margin-right: 5vh;
+    text-align: center;
+    font-size: 13vh;
+    font-family: "Cherry Bomb One", system-ui;
+    color: rgb(255, 255, 255);
+    text-shadow: 2vh 1.5vh 2vh #5991EF;
+    display: flex;
+    margin-top: 4vh;
+}
+
+/*AJUSTES DE LETRA*/
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: wave 0.5s forwards;
+}
+
+/*ANIMACION*/
+
+@keyframes wave {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes reset {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.letter-reset {
+    animation: reset 0s forwards 4s;
+}
+
+/*comming*/
+
+.container {
+    position: absolute;
+    align-content: center;
+    margin-left: 15vh;
+    font-family: "Handjet", sans-serif;
+    margin-top: 15vh;
+}
+
+.typing-animation {
+    display: inline-block;
+    font-size: 15vh;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid rgb(255, 255, 255); /* Cursor */
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+    font-family: "Handjet", sans-serif;
+    margin-right:10%;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(255, 255, 255); }
+}
+
+
+/*botones*/
+
+.botones {
+    display: flex;
+    position: absolute;
+    z-index: 10; /* Asegúrate de que los botones estén en el nivel superior */
+    cursor: pointer;
+    bottom: 2vh;
+}
+
+.btn-salir {
+    background-color: transparent;
+    border: none;
+}
+
+.img-salir {
+    margin-left: 2vh;
+    height: 15vh;
+    transition: .3s;
+}
+
+.btn-salir:hover {
+    transform: scale(1.2);
+}
